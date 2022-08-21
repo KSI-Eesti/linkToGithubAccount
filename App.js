@@ -14,7 +14,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{count}</Text>
-      <Button title='ADB' onPress={onClick}></Button>
+      <Button title='ADB' color='darkblue' onPress={onClick}></Button>
       <Text style={styles.text}>You clicked {count * 5} times</Text>
       <StatusBar barStyle= 'dark-content' />
     </View>
@@ -24,12 +24,17 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#00f',
+    backgroundColor: '#aff',
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 9,
+    borderColor: 'skyblue',
+    margin: 20,
+    borderRadius: 20
   },
   text: {
-    color: '#fff',
-    margin: 20
+    color: '#200',
+    margin: 20,
+    fontSize: 25
   }
 });
