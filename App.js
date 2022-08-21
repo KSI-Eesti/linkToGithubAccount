@@ -1,19 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Button, Linking } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
-  const [name, setName] = useState('CR7')
+  const [count, setCount] = useState(0);
+  const [click, setClick] = useState(0);
 
-  const onClick = ()=> {  
-    Linking.openURL('https://github.com/KSI-Eesti')
+  const onClick = ()=> { 
+    setCount(count + 1);
+    setClick(click * 5);
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>My name is {name}</Text>
-      <Button title='Let us Start' color='#111001' onPress={onClick}></Button>
-      <StatusBar barStyle= 'light-content' />
+      <Text style={styles.text}>{count}</Text>
+      <Button title='ADB' onPress={onClick}></Button>
+      <Text style={styles.text}>You clicked {count * 5} times</Text>
+      <StatusBar barStyle= 'dark-content' />
     </View>
   );
 }
@@ -21,12 +24,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#00f',
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
-    color: '#e11',
+    color: '#fff',
     margin: 20
   }
 });
